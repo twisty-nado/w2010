@@ -97,6 +97,27 @@
             });
         }
 
+        function openMinecraft() {
+            new WinBox("Minecraft", {
+                border: "4px",
+                width: "800",
+                height: "600",
+                x: "100px",
+                y: "100px",
+                top: 0,
+                right: 0,
+                bottom: 40,
+                left: 0,
+                url: "https://classic.minecraft.net",
+                onblur: function () {
+                    this.setBackground("rgb(142 157 179 / 0.40)");
+                },
+                onfocus: function () {
+                    this.setBackground("rgb(162 177 199 / 0.60)");
+                },
+            });
+        }
+
         function openStart() {
             var x = document.getElementById("startMenuId");
             if (x.style.display === "none") {
@@ -169,7 +190,7 @@
         }
 
         .wb-full {
-            display: none
+            display: none;
         }
 
         .wb-max {
@@ -383,16 +404,27 @@
 <body>
     <div class="login" id="login">
         <div class="profile2" style="position: absolute; left: 50%; transform: translateX(-50%); top: 35%;">
-            <img src="https://th.bing.com/th/id/R.92c3cffb81568e305ba7a48fd59a32b3?rik=QPHzN%2fLnZkqSwg&riu=http%3a%2f%2fcdn.tweaks.com%2fimg%2farticle%2fdefaultuserpic.png&ehk=eKwSdvqRs%2fRWdvsmsemgXM%2bdVgwfhM159aOjqszi8bE%3d&risl=&pid=ImgRaw&r=0" style="width: 128px; height: 128px; border: solid; border-width: 8px; border-color: rgb(202 217 239 / 0.60); border-radius: 8px;" />
-            <p style="text-align: center; color: white; text-shadow: 0 0 2px black;">Twisty</p>
-            <input class="textentry" style="position: absolute; left: 50%; transform: translate(-50%); font-size: 12px; height: 22px; width: 224px;" type="password" placeholder="Password" />
-            <img class="loginButton" style="width: 32px; height: 32px; position: absolute; right: -80px; bottom: -27px;" src="button.png" onclick="hideLogin()" />
+            <img src="https://th.bing.com/th/id/R.429ffea0fdb23ea50a539dc218fa7d58?rik=Bc1ECESZY9B0Rg&pid=ImgRaw&r=0" style="width: 128px; height: 128px; border: solid; border-width: 8px; border-color: rgb(202 217 239 / 0.60); border-radius: 8px;" />
+            <p style="text-align: center; color: white; text-shadow: 0 0 2px black; font-size: 26px;">Other User</p>
+            <input id="user" style="position: absolute; left: 50%; transform: translate(-50%); font-size: 12px; height: 22px; width: 224px;" placeholder="User name" type="text" />
+            <input style="position: absolute; left: 50%; transform: translate(-50%); top: 260px; font-size: 12px; height: 22px; width: 224px;" type="password" placeholder="Password" />
+            <img class="loginButton" style="width: 32px; height: 32px; position: absolute; right: -80px; bottom: -62px;" src="button.png" onclick="hideLogin()" />
         </div>
         <img style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); filter: blur(0.6px);" src="icont.png" />
         <script>
             function hideLogin() {
                 var x = document.getElementById("login");
+                var y = document.getElementById("user");
+                var z = document.getElementById("username");
+                z.textContent = y.value;
                 x.style.display = "none";
+            }
+
+            function showLogin() {
+                var x = document.getElementById("login");
+                var y = document.getElementById("user");
+                y.value = "";
+                x.style.display = "block";
             }
         </script>
     </div>
@@ -481,9 +513,10 @@
             <div class="profile" style="position: absolute; right: 12%; top: -24px;">
                 <img src="https://th.bing.com/th/id/R.92c3cffb81568e305ba7a48fd59a32b3?rik=QPHzN%2fLnZkqSwg&riu=http%3a%2f%2fcdn.tweaks.com%2fimg%2farticle%2fdefaultuserpic.png&ehk=eKwSdvqRs%2fRWdvsmsemgXM%2bdVgwfhM159aOjqszi8bE%3d&risl=&pid=ImgRaw&r=0" style="width: 48px; height: 48px; border: solid; border-color: rgb(202 217 239 / 0.60); border-radius: 4px;" />
             </div>
-            <div class="sideStart" style="background: none; position: absolute; right: 25%; top: 24px; color: white; font-size: 14px; text-shadow: 0 0 2px black;">
-                <p>Twisty</p>
+            <div class="sideStart" style="background: none; position: absolute; left: 65%; top: 24px; color: white; font-size: 14px; text-shadow: 0 0 2px black; text-align: left; height: 100%;">
+                <p id="username" style="text-wrap: normal;">balls</p>
             </div>
+            <button style="position: absolute; bottom: 30px; right: 40px;" onclick="showLogin(), openStart()">Log off</button>
         </div>
         </div>
     <div class="desktopIcons">
@@ -498,6 +531,10 @@
         <div class="desktopIcon" onclick="openWinver()">
             <img src="wlg.png" style="width: 72px; height: 72px;" />
             <p style="text-align: center; bottom: 0px; left: 0; position: relative; color: white; text-shadow: 0 0 2px black;">About Windows</p>
+        </div>
+        <div class="desktopIcon" onclick="openMinecraft()">
+            <img src="mc.ico" style="width: 72px; height: 72px;" />
+            <p style="text-align: center; bottom: 0px; left: 0; position: relative; color: white; text-shadow: 0 0 2px black;">Minecraft</p>
         </div>
     </div>
         <p class="buildString" style="color: white; text-shadow: 0 0 2px black; font-size: 14px;">
