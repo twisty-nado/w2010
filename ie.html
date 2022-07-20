@@ -1,0 +1,26 @@
+<link rel="stylesheet"
+      href="https://unpkg.com/7.css" />
+<style>
+    body {
+        margin: 0;
+        background-color: white;
+    }
+</style>
+<div>
+    <input style="width: calc(100% - 160px)" type="text" placeholder="Enter URL">
+    <button onclick="document.querySelector('iframe').src = 'https://www.google.com/webhp?igu=1'">Home</button>
+    <button id="button">Search</button>
+    <iframe name="WBrowse" src="https://www.google.com/webhp?igu=1" style="width: calc(100%); height: calc(100% - 24px);" frameborder="0"></iframe>
+
+
+    <script>
+        let input = document.querySelector("input");
+        let btn = document.getElementById("button");
+        let iframe = document.querySelector("iframe");
+
+        btn.onclick = function () {
+            iframe.src = input.value;
+        };
+
+    </script>
+</div>

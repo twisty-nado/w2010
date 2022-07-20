@@ -1,0 +1,700 @@
+<html>
+<head>
+    <script src="winbox.bundle.js"></script>
+    <title>Windows(R) Codename "2010"</title>
+    <link rel="icon" type="image/x-icon" href="wlg.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/7.css" />
+    <script>
+        function openWinver() {
+            var snd = new Audio("snd/Windows Ding.wav");
+            snd.play();
+            new WinBox("About Windows", {
+                border: "4px",
+                width: "443px",
+                height: "466px",
+                x: "100px",
+                y: "100px",
+                top: 0,
+                right: 0,
+                bottom: 32,
+                left: 0,
+                html: "<center><br /><img src='icont.png' /></center> <button class='buttonMain' style='position: absolute; right: 15px; bottom: 15px;'>OK</button>",
+                class: [
+                    "no-min",
+                    "no-max",
+                    "no-full",
+                    "no-resize",
+                    "background"
+                ],
+                onblur: function () {
+                    this.setBackground("rgb(142 157 179 / 0.40)");
+                },
+                onfocus: function () {
+                    this.setBackground("rgb(162 177 199 / 0.60)");
+                },
+            });
+        }
+
+        function openPinball() {
+            new WinBox("3D Pinball", {
+                border: "4px",
+                width: "627",
+                height: "500",
+                x: "100px",
+                y: "100px",
+                top: 0,
+                right: 0,
+                bottom: 32,
+                left: 0,
+                url: "https://rowan-bird.github.io/balls/",
+                class: [
+                    "no-min",
+                    "no-max",
+                    "no-full",
+                    "no-resize",
+                    "background"
+                ],
+                onblur: function () {
+                    this.setBackground("rgb(142 157 179 / 0.40)");
+                },
+                onfocus: function () {
+                    this.setBackground("rgb(162 177 199 / 0.60)");
+                },
+            });
+        }
+
+        function openWeb() {
+            new WinBox("Internet Explorer", {
+                border: "4px",
+                width: "800",
+                height: "600",
+                x: "100px",
+                y: "100px",
+                top: 0,
+                right: 0,
+                bottom: 32,
+                left: 0,
+                url: "ie.html",
+                onblur: function () {
+                    this.setBackground("rgb(142 157 179 / 0.40)");
+                },
+                onfocus: function () {
+                    this.setBackground("rgb(162 177 199 / 0.60)");
+                },
+            });
+        }
+
+        function openGravitySandbox() {
+            new WinBox("Gravity Sandbox", {
+                border: "4px",
+                width: "800",
+                height: "600",
+                x: "100px",
+                y: "100px",
+                top: 0,
+                right: 0,
+                bottom: 32,
+                left: 0,
+                url: "https://gravitysandbox.neocities.org",
+                onblur: function () {
+                    this.setBackground("rgb(142 157 179 / 0.40)");
+                },
+                onfocus: function () {
+                    this.setBackground("rgb(162 177 199 / 0.60)");
+                },
+            });
+        }
+
+        function openMinecraft() {
+            new WinBox("Minecraft", {
+                border: "4px",
+                width: "800",
+                height: "600",
+                x: "100px",
+                y: "100px",
+                top: 0,
+                right: 0,
+                bottom: 32,
+                left: 0,
+                url: "https://classic.minecraft.net",
+                onblur: function () {
+                    this.setBackground("rgb(142 157 179 / 0.40)");
+                },
+                onfocus: function () {
+                    this.setBackground("rgb(162 177 199 / 0.60)");
+                },
+            });
+        }
+
+        function openError() {
+            var snd = new Audio("snd/Windows Critical Stop.wav");
+            snd.play();
+            new WinBox("Windows 2010", {
+                border: "4px",
+                width: "400",
+                height: "130",
+                x: "100px",
+                y: "100px",
+                top: 0,
+                right: 0,
+                bottom: 32,
+                left: 0,
+                html: "<p>Cannot open file, corrupted.</p>",
+                class: [
+                    "no-min",
+                    "no-max",
+                    "no-full",
+                    "no-resize",
+                    "background"
+                ],
+                onblur: function () {
+                    this.setBackground("rgb(142 157 179 / 0.40)");
+                },
+                onfocus: function () {
+                    this.setBackground("rgb(162 177 199 / 0.60)");
+                },
+            });
+        }
+
+        function openStart() {
+            var x = document.getElementById("startMenuId");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+    </script>
+    <style>
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes windows {
+            from {
+                position: absolute;
+                left: 100px;
+                top: 100px;
+                transform: perspective(2000px) rotateX(-25deg) scale(92%);
+                opacity: 0;
+            }
+
+            to {
+                position: absolute;
+                left: 100px;
+                top: 100px;
+                transform: rotateY(0deg) scale(100%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes windowscls {
+            from {
+                transform: rotateY(0deg) scale(100%);
+                opacity: 1;
+            }
+
+            to {
+                transform: perspective(2000px) rotateX(25deg) scale(92%);
+                opacity: 0;
+            }
+        }
+
+        html, body {
+            background-image: url(img/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: black;
+            background-position: center;
+            font-family: 'Segoe UI';
+            margin: unset;
+            color: black;
+            overflow: hidden;
+            cursor: url("img/ns.png"), pointer;
+        }
+
+        body {
+            margin: unset;
+        }
+
+        .wb-min {
+            background: url(img/minimize.png) no-repeat center 10px, linear-gradient(hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 45%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.1) 75%,hsla(0,0%,100%,.5));
+            border: 0;
+            border-radius: 0;
+            border-right: 1px solid rgba(0,0,0,.6);
+            box-shadow: inset 0 0 0 0.5px #eee;
+            box-sizing: border-box;
+            padding: 0;
+            position: relative;
+            border: 0;
+            border-bottom-left-radius: 4px;
+            width: 25px;
+            height: 18px;
+            margin-bottom: 15px;
+            transition: 0.5s;
+        }
+
+        .wb-full {
+            display: none;
+        }
+
+        .wb-max {
+            background: url(img/restore.png) no-repeat center center, linear-gradient(hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 45%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.1) 75%,hsla(0,0%,100%,.5));
+            border: 0;
+            border-radius: 0;
+            border-right: 1px solid rgba(0,0,0,.6);
+            box-shadow: inset 0 0 0 0.5px #eee;
+            box-sizing: border-box;
+            padding: 0;
+            position: relative;
+            border: 0;
+            width: 25px;
+            height: 18px;
+            margin-bottom: 15px;
+            transition: 0.5s;
+        }
+
+        .wb-close {
+            background: url(img/close.png) no-repeat center center, linear-gradient(hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 45%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.1) 75%,hsla(0,0%,100%,.5));
+            border: 0;
+            border-radius: 0;
+            border-right: 1px solid rgba(0,0,0,.6);
+            box-shadow: inset 0 0 0 0.5px #eee;
+            box-sizing: border-box;
+            padding: 0;
+            position: relative;
+            border: 0;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            background-color: #d04a37;
+            width: 45px;
+            height: 18px;
+            margin-bottom: 15px;
+            margin-right: 6px;
+            transition: 0.5s;
+        }
+
+            .winbox:not(.no-max, .no-min) .wb-close {
+                background: url(img/close.png) no-repeat center center, linear-gradient(hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 45%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.1) 75%,hsla(0,0%,100%,.5));
+                border: 0;
+                border-radius: 0;
+                border-right: 1px solid rgba(0,0,0,.6);
+                box-shadow: inset 0 0 0 0.5px #eee;
+                box-sizing: border-box;
+                padding: 0;
+                position: relative;
+                border: 0;
+                border-bottom-right-radius: 4px;
+                background-color: #d04a37;
+                width: 45px;
+                height: 18px;
+                margin-bottom: 15px;
+                margin-right: 6px;
+                transition: 0.5s;
+            }
+
+            .wb-close:hover{
+                filter: brightness(130%);
+            }
+
+            .wb-max:hover {
+                filter: brightness(130%);
+            }
+
+            .wb-min:hover {
+                filter: brightness(130%);
+            }
+
+        .wb-title {
+            font-family: 'Segoe UI';
+            color: white;
+            text-shadow: 0 0 2px black;
+        }
+
+        .wb-header {
+            background: linear-gradient(55deg, transparent 1%, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0.1) 30%, rgba(0, 0, 0, 0.1) 32%, rgba(0, 0, 0, 0.1) 55%, transparent 57%, rgba(255, 255, 255, 0.1) 70%, transparent 72%);
+            background-color: rgb(32,32,32);
+        }
+
+        .winbox {
+            animation: windows 0.5s;
+            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.6);
+            z-index: 0;
+            border: 1px solid rgba(0, 0, 0, 0.6);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2)), linear-gradient(55deg, transparent, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 50%, transparent 53%), #4580c4;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 16px black;
+        }
+
+            .winbox:not(.max) .wb-max {
+                background: url(img/maximize.png) no-repeat center center, linear-gradient(hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 45%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.1) 75%,hsla(0,0%,100%,.5));
+            }
+
+            .winbox:not(.max) {
+                border-radius: 6px;
+            }
+
+                .winbox:not(.max) .wb-header {
+                    background: linear-gradient(55deg, transparent 1%, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0.1) 30%, rgba(0, 0, 0, 0.1) 32%, rgba(0, 0, 0, 0.1) 55%, transparent 57%, rgba(255, 255, 255, 0.1) 70%, transparent 72%);
+                }
+
+        .wb-body {
+            margin: 6px;
+        }
+
+        .buildString {
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+            text-align: right;
+            color: white;
+        }
+
+        .desktopIcons {
+            position: fixed;
+            color: white;
+            left: 16px;
+            top: 16px;
+        }
+
+        .desktopIcon {
+            width: 72px;
+            height: 128px;
+            font-size: 16px;
+        }
+
+            .desktopIcon:hover {
+                border: solid;
+                border-width: 1px;
+                background-color: rgb(70 184 255 / 0.6);
+                border-color: rgb(70 184 255);
+                transform: translate(-1px, -1px);
+            }
+
+        .winbox:not(.focus) .wb-min {
+            opacity: 0.6;
+            background: url(img/minimize.png) no-repeat center 10px, linear-gradient(to right, rgb(255 255 255 / 0.00), rgb(255 255 255 / 0.00));
+        }
+
+        .winbox:not(.focus) .wb-max {
+            opacity: 0.6;
+            background: url(img/maximize.png) no-repeat center center, linear-gradient(to right, rgb(255 255 255 / 0.00), rgb(255 255 255 / 0.00));
+        }
+
+        .winbox:not(.focus) .wb-close {
+            opacity: 0.6;
+            background: url(img/close.png) no-repeat center center, linear-gradient(to right, rgb(255 255 255 / 0.00), rgb(255 255 255 / 0.00));
+        }
+
+        .winbox:not(.focus) {
+            box-shadow: 0 0 8px black;
+        }
+
+            .winbox:not(.focus) .wb-header {
+                opacity: 0.6;
+            }
+
+        .sb {
+            background-image: url(sb3.png);
+            background-size: contain;
+            position: absolute;
+            left: 7.5px;
+            bottom: 0px;
+            transition: 0.5s;
+        }
+
+            .sb:hover {
+                background-image: url(sb4.png);
+                background-size: contain;
+                position: absolute;
+                left: 7.5px;
+            }
+
+        .buttonStart {
+            width: 100%;
+            height: 36px;
+        }
+
+            .buttonStart:hover {
+                background-color: dodgerblue;
+            }
+
+        .wallpaper {
+            position: absolute;
+            bottom: 128px;
+            right: 16px;
+            background-color: rgb(142 157 179 / 0.40);
+            backdrop-filter: blur(4px);
+            width: 256px;
+            height: 64px;
+            border-radius: 4px;
+        }
+
+        .insideWallpaper {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            backdrop-filter: blur(4px);
+            width: 246px;
+            height: 54px;
+        }
+
+        .login {
+            position: fixed;
+            z-index: 9999;
+            background-image: url(img/login.jpg);
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .buttonlogin {
+            background: linear-gradient(55deg, transparent 1%, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0.1) 30%, rgba(0, 0, 0, 0.1) 32%, rgba(0, 0, 0, 0.1) 55%, transparent 57%, rgba(255, 255, 255, 0.1) 70%, transparent 72%);
+            border: solid;
+            border-color: rgb(66 174 206);
+            border-radius: 4px;
+            border-width: 1px;
+            color: white;
+            width: 70px;
+            height: 24px;
+        }
+
+        .taskbarTexture {
+            background-image: url(img/tbtxt.png);
+            background-size: contain;
+        }
+
+        .startMenuTexture {
+            background-color: rgb(32 32 32 / 0.40);
+            border-top-right-radius: 4px;
+        }
+
+        .textentry {
+            border: solid;
+            border-color: rgb(102 102 102);
+            border-width: 1px;
+            border-radius: 2px;
+        }
+
+            .textentry:focus {
+                outline: none;
+            }
+
+        .loginButton {
+            height: 30px;
+            transition: filter 0.4s;
+        }
+
+            .loginButton:hover {
+                filter: brightness(130%);
+            }
+    </style>
+</head>
+<body>
+    <div id="boot" style="z-index: 9999; background-color: black; width: 100%; height: 100%;">
+        <img autoplay muted style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);" onclick="skip()" src="img/loading.gif" />
+        <script>
+            setTimeout(function () {
+                document.getElementById("boot").style.display = "none";
+                document.getElementById("desktop").style.display = "block";
+            }, 2500)
+
+            function skip() {
+                document.getElementById("boot").style.display = "none";
+                document.getElementById("desktop").style.display = "block";
+            }
+        </script>
+    </div>
+    <script>
+        function openW2010INF() {
+            var snd2 = new Audio("snd/Windows Logon Sound.wav");
+            snd2.play();
+            setTimeout(function () {
+                var snd = new Audio("snd/Windows Ding.wav");
+                snd.play();
+                new WinBox("Windows 2010", {
+                    border: "4px",
+                    width: "500",
+                    height: "200",
+                    x: "100px",
+                    y: "100px",
+                    html: "<center> <br /> <img src='icont.png' /> <br /> <br /> <br /> <p>Windows 2010 to NOT be copied. Work in progress, report bugs to Discord server.</p></center>",
+                    class: [
+                        "no-min",
+                        "no-max",
+                        "no-full",
+                        "no-resize",
+                        "background"
+                    ],
+                    onblur: function () {
+                        this.setBackground("rgb(142 157 179 / 0.40)");
+                    },
+                    onfocus: function () {
+                        this.setBackground("rgb(162 177 199 / 0.60)");
+                    },
+                });
+            }, 100)
+        }
+    </script>
+    <div class="login" id="login">
+        <div class="profile2" style="position: absolute; left: 50%; transform: translateX(-50%); top: 35%;">
+            <img src="https://th.bing.com/th/id/R.429ffea0fdb23ea50a539dc218fa7d58?rik=Bc1ECESZY9B0Rg&pid=ImgRaw&r=0" style="width: 128px; height: 128px; border: solid; border-width: 8px; border-color: rgb(202 217 239 / 0.60); border-radius: 8px;" />
+            <p style="text-align: center; color: white; text-shadow: 0 0 2px black; font-size: 26px;">Other User</p>
+            <input id="user" style="position: absolute; left: 50%; transform: translate(-50%); font-size: 12px; height: 22px; width: 224px;" placeholder="User name" type="text" />
+            <input style="position: absolute; left: 50%; transform: translate(-50%); top: 260px; font-size: 12px; height: 22px; width: 224px;" type="password" placeholder="Password" />
+            <img class="loginButton" style="width: 32px; height: 32px; position: absolute; right: -80px; bottom: -62px;" src="button.png" onclick="hideLogin(), openW2010INF()" />
+        </div>
+        <img style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); filter: blur(0.6px);" src="icont.png" />
+        <script>
+            function hideLogin() {
+                var x = document.getElementById("login");
+                var y = document.getElementById("user");
+                var z = document.getElementById("username");
+                z.textContent = y.value;
+                x.style.display = "none";
+            }
+
+            function showLogin() {
+                var x = document.getElementById("login");
+                var y = document.getElementById("user");
+                y.value = "";
+                x.style.display = "block";
+            }
+        </script>
+    </div>
+    <div id="desktop" style="display: none;">
+        <div class="wallpaper" id="wallp" style="display: none;">
+            <div class="insideWallpaper">
+                <input type='file' id='files' name='files[]' />
+                <output id='list'></output>
+            </div>
+            <script>
+                function handleFileSelect(evt) {
+                    var files = evt.target.files; // FileList object
+
+                    // Loop through the FileList and render image files as thumbnails.
+                    for (var i = 0, f; f = files[i]; i++) {
+
+                        // Only process image files.
+                        if (!f.type.match('image.*')) {
+                            continue;
+                        }
+
+                        var reader = new FileReader();
+
+                        // Closure to capture the file information.
+                        reader.onload = (function (theFile) {
+                            return function (e) {
+                                // Render thumbnail.
+                                $("html").css("background-image", "url(" + e.target.result + ")");
+                            };
+                        })(f);
+
+                        // Read in the image file as a data URL.
+                        reader.readAsDataURL(f);
+                    }
+                }
+
+                document.getElementById('files').addEventListener('change', handleFileSelect, false);
+            </script>
+        </div>
+        <div class="taskbar" style="width: 100%; height: 32px; backdrop-filter: blur(4px); bottom: 0; position: absolute; z-index: 999; background-color: rgb(162 177 199 / 0.60); ">
+            <div class="taskbarTexture" style="width: 100%; height: 100%;">
+                <div onclick="openStart()" class="sb" style="width: 38px; height: 38px; bottom: -2px; position: absolute;"></div>
+                <img style="width: 30px; height: 30px; position: absolute; left: 105px; top: 50%; transform: translateY(-50%)" src="pinball.ico" onclick="openPinball()" />
+                <img style="width: 30px; height: 30px; position: absolute; left: 150px; top: 50%; transform: translateY(-50%)" src="wlg.png" onclick="openWinver()" />
+                <img style="width: 30px; height: 30px; position: absolute; left: 60px; top: 50%; transform: translateY(-50%)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Internet_Explorer_10%2B11_logo.svg/2085px-Internet_Explorer_10%2B11_logo.svg.png" onclick="openWeb()" />
+                <p id="time" style="position: absolute; right: 24px; line-height: 0px; color: white; font-size: 16px;">00:00</p>
+                <img src="https://img.icons8.com/ios-filled/344/my-computer--v3.png" style="position: absolute; right: 128px; top: 50%; transform: translateY(-50%); color: white; width: 24px; height: 24px; filter: invert(1)" onclick="openWallpaper()" />
+                <script>
+                    function openWallpaper() {
+                        var x = document.getElementById("wallp");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                        } else {
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+                <script>
+                    function getDayTime() {
+                        var dt = new Date();
+                        document.getElementById('time').innerHTML = dt.toLocaleTimeString();
+                    }
+                    setInterval('getDayTime()', 100);
+                </script>
+            </div>
+        </div>
+        <div class="startMenu" id="startMenuId" style="width: 384px; height: 512px; background-color: rgb(162 177 199 / 0.60); backdrop-filter: blur(4px); bottom: 32px; position: absolute; z-index: 998; display: none; border-top-right-radius: 4px;">
+            <div class="startMenuTexture" style="width: 100%; height: 100%;">
+                <div class="insideStart" style="width: 60%; height: 492px; background-color: white; position: relative; left: 10px; top: 10px; border-radius: 4px;">
+                    <div class="buttonStart" onclick="openWeb(), openStart()">
+                        <img style="width: 32px; height: 32px; display: inline-block;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Internet_Explorer_10%2B11_logo.svg/2085px-Internet_Explorer_10%2B11_logo.svg.png" />
+                        <p style="display: inline-block; color: white; text-shadow: 0 0 2px black; transform: translateY(-8px)">Internet Explorer</p>
+                    </div>
+                    <div class="buttonStart" onclick="openWinver(), openStart()">
+                        <img style="width: 32px; height: 32px; display: inline-block; filter: invert(1)" src="wlg.png" />
+                        <p style="display: inline-block; color: white; text-shadow: 0 0 2px black; transform: translateY(-8px)">About Windows</p>
+                    </div>
+                    <div class="buttonStart" onclick="openPinball(), openStart()">
+                        <img style="width: 32px; height: 32px; display: inline-block;" src="pinball.ico" />
+                        <p style="display: inline-block; color: white; text-shadow: 0 0 2px black; transform: translateY(-8px)">3D Pinball</p>
+                    </div>
+                    <div class="buttonStart" onclick="openGravitySandbox(), openStart()">
+                        <img style="width: 32px; height: 32px; display: inline-block;" src="exe.png" />
+                        <p style="display: inline-block; color: white; text-shadow: 0 0 2px black; transform: translateY(-8px)">Gravity Sandbox</p>
+                    </div>
+                </div>
+                <div class="profile" style="position: absolute; right: 12%; top: -24px;">
+                    <img src="https://th.bing.com/th/id/R.92c3cffb81568e305ba7a48fd59a32b3?rik=QPHzN%2fLnZkqSwg&riu=http%3a%2f%2fcdn.tweaks.com%2fimg%2farticle%2fdefaultuserpic.png&ehk=eKwSdvqRs%2fRWdvsmsemgXM%2bdVgwfhM159aOjqszi8bE%3d&risl=&pid=ImgRaw&r=0" style="width: 48px; height: 48px; border: solid; border-color: rgb(202 217 239 / 0.60); border-radius: 4px;" />
+                </div>
+                <div class="sideStart" style="background: none; position: absolute; left: 65%; top: 24px; color: white; font-size: 14px; text-shadow: 0 0 2px black; text-align: left; height: 100%;">
+                    <p id="username" style="text-wrap: normal;">balls</p>
+                </div>
+                <button style="position: absolute; bottom: 30px; right: 40px;" onclick="showLogin(), openStart()">Log off</button>
+            </div>
+        </div>
+        <div class="desktopIcons">
+            <div class="desktopIcon" ondblclick="openWeb()">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Internet_Explorer_10%2B11_logo.svg/2085px-Internet_Explorer_10%2B11_logo.svg.png" style="width: 72px; height: 72px;" />
+                <p style="text-align: center; bottom: 0px; left: 0; position: relative; color: white; text-shadow: 0 0 2px black;">Internet Explorer</p>
+            </div>
+            <div class="desktopIcon" ondblclick="openPinball()">
+                <img src="pinball.ico" style="width: 72px; height: 72px;" />
+                <p style="text-align: center; bottom: 0px; left: 0; position: relative; color: white; text-shadow: 0 0 2px black;">3D Pinball</p>
+            </div>
+            <div class="desktopIcon" ondblclick="openWinver()">
+                <img src="wlg.png" style="width: 72px; height: 72px;" />
+                <p style="text-align: center; bottom: 0px; left: 0; position: relative; color: white; text-shadow: 0 0 2px black;">About Windows</p>
+            </div>
+            <div class="desktopIcon" ondblclick="openMinecraft()">
+                <img src="mc.ico" style="width: 72px; height: 72px;" />
+                <p style="text-align: center; bottom: 0px; left: 0; position: relative; color: white; text-shadow: 0 0 2px black;">Minecraft</p>
+            </div>
+            <div class="desktopIcon" ondblclick="openError()">
+                <img src="exe.png" style="width: 72px; height: 72px;" />
+                <p style="text-align: center; bottom: 0px; left: 0; position: relative; color: white; text-shadow: 0 0 2px black;">Media player</p>
+            </div>
+        </div>
+        <p class="buildString" style="color: white; text-shadow: 0 0 2px black; font-size: 14px;">
+            Windows(R) Codename "2010" Development Operating System.
+            <br />
+            Copyright Microsoft(R) 1975-2010
+        </p>
+    </div>
+</body>
+</html>
