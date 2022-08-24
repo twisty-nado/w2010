@@ -1,0 +1,30 @@
+button{
+    background-color: #ddd;
+    min-width: 75px;
+    min-height: 25px;
+    border: solid 1px #a0a0a0;
+    transition: 0.2s;
+}
+button:hover{
+    background-color: #d9ecff;
+    border: solid 1px #85a5c5;
+}
+button:active{
+    background-color: #b1d8ff;
+    border: solid 1px #85a5c5;
+    outline: 1px dotted #000000;
+    outline-offset: -4px;
+    transition: 0s;
+}
+button:default{
+    background-color: #ddd;
+    border: solid 1px #a0a0a0;
+    outline: 4px solid #2391ff;
+    outline-offset: -4px;
+}
+input {
+    border: 1px solid #a0a0a0;
+}
+input:focus {
+    outline: none;
+}
